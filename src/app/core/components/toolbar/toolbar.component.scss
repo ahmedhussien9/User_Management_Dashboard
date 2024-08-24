@@ -1,0 +1,31 @@
+.toolbar {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  background: #fafafa;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  padding: 0rem 2rem;
+  .logo {
+    flex: 1;
+    font-size: 2rem;
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--data {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-right: 1px solid #e0e0e0;
+      padding: 0rem 1rem;
+      .name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

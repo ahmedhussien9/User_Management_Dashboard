@@ -1,0 +1,26 @@
+.btn {
+    margin-right: 5px; /* Adjust the spacing as needed */
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0rem 1rem 0rem;
+    &__title {
+        font-size: 1rem;
+        font-weight: 600;
+        flex: 1;
+        h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+        .btn {
+            margin-right: 5px;
+        }
+    }
+}

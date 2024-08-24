@@ -1,0 +1,21 @@
+<!-- src/app/login/login.component.html -->
+<div class="k-login-container">
+    <div class="k-login-box">
+        <h3 class="k-login-title">Login</h3>
+        <form (ngSubmit)="login()" class="k-login-form">
+            <div class="k-form-field">
+                <label for="email" class="k-form-label">Email</label>
+                <input type="email" kendoTextBox [(ngModel)]="email" name="email" id="email" required />
+            </div>
+
+            <div class="k-form-field">
+                <label for="password" class="k-form-label">Password</label>
+                <input type="password" kendoTextBox [(ngModel)]="password" name="password" id="password" required />
+            </div>
+
+            <div class="k-login-actions">
+                <button type="submit" kendoButton look="default" class="k-login-button">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
