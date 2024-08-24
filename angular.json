@@ -25,7 +25,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              {
+                "input": "node_modules/@progress/kendo-theme-bootstrap/dist/all.scss"
+              },
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -87,7 +90,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.scss"
+              },
+              "src/styles.scss"
             ],
             "scripts": []
           }

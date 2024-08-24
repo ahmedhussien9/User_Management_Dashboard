@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+// src/styles.scss
+// Custom styles to align Kendo UI inputs with Bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap'; // Import Bootstrap first
+
+
+.add-btn {
+    margin: 1rem 0rem;
+    font-weight: bold;
+    display: flex;
+    flex-grow: 1;
+}

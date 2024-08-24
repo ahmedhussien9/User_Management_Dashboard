@@ -1,0 +1,34 @@
+<div class="container">
+
+    <section class="section-header">
+        <div class="section-header__title">
+            <h1>User Management</h1>
+        </div>
+        <div class="section-header__action">
+            <button *appRoleBasedAccess="[Role.Admin, Role.Manager]" kendoButton (click)="openDialog(null)"
+                class="add-btn">Add New User</button>
+        </div>
+    </section>
+    <kendo-grid [data]="users.data" [resizable]="true" [reorderable]="true" (pageChange)="pageChange($event)">
+        <kendo-grid-column field="firstName" title="First Name"></kendo-grid-column>
+        <kendo-grid-column field="lastName" title="Last Name"></kendo-grid-column>
+        <kendo-grid-column field="email" title="Email"></kendo-grid-column>
+        <kendo-grid-column field="roleId" title="Role">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <span [appRoleBackground]="dataItem.roleId"> {{ getRoleName(dataItem.roleId)
+                    }}</span>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-command-column title="Actions" [width]="180">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <button *appRoleBasedAccess="[Role.Admin, Role.Manager]" class="btn btn-primary"
+                    (click)="openDialog(dataItem)">Edit</button>
+                <button *appRoleBasedAccess="[Role.Admin]" class="btn btn-danger"
+                    (click)="deleteUser(dataItem._id)">Delete</button>
+            </ng-template>
+        </kendo-grid-command-column>
+    </kendo-grid>
+    <!-- Use the UserDialogComponent for the dialog -->
+    <app-user-dialog [user]="selectedUser" [isOpen]="isDialogOpen" (save)="saveUser($event)" (close)="closeDialog()">
+    </app-user-dialog>
+</div>
